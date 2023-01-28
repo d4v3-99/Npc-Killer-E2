@@ -1,0 +1,18 @@
+# Npc-Killer-E2
+Kills Npcs
+
+@name d4v3's Npc Killer
+@model models/Items/combine_rifle_ammo01.mdl
+@outputs E:entity
+event tick() {
+    O = owner()
+    O:owner()
+    E = entity()
+findByClass("npc_*")
+foreach(_,O:entity = findToArray()){
+O:npcKill()
+}
+}
+entity():setHalo(( vec( 0,255,255) ))
+entity():setMaterial("models/wireframe")
+entity():setColor((vec( 0,255,255) ))
